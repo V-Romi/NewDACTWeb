@@ -98,6 +98,7 @@ body {
 .hamburger::after {
     content: '';
     position: absolute;
+    left: 0;
     width: 1.5rem;
     height: 2px;
     background-color: var(--primary-color);
@@ -491,6 +492,7 @@ body {
         background-attachment: scroll;
         background-position: center center;
         min-height: 100vh;
+        background-image: url('img/landing\ Page\ movil.webp');
     }
     
     .hero-title {
