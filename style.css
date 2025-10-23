@@ -439,7 +439,8 @@ body {
 @media (max-width: 768px) {
     /* Navegación Mobile */
     .logo-desktop {
-        display: none;
+        display: block !important;
+        font-size: 1.25rem;
     }
 
     .logo-mobile {
