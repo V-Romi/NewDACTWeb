@@ -34,7 +34,7 @@ body {
 .nav-container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,8 +54,10 @@ body {
     display: none;
     width: 2.5rem;
     height: 2.5rem;
-    background: linear-gradient(to bottom right, var(--blue-gradient-start), var(--blue-gradient-end), var(--yellow-gradient));
-    border-radius: 0.5rem;
+    background-image: url('img/favicon-daclimatech.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .nav-menu {
@@ -80,6 +82,7 @@ body {
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    margin-right: -0.5rem;
 }
 
 .hamburger {
@@ -438,36 +441,32 @@ body {
 /* ========== RESPONSIVE MEJORADO ========== */
 @media (max-width: 768px) {
     /* Navegación Mobile */
+    .nav-container {
+        padding: 0 1rem;
+    }
+
     .logo-desktop {
-        display: block !important;
-        font-size: 1.25rem;
+        display: none;
     }
 
     .logo-mobile {
         display: block;
     }
 
-    .nav-container {
-        padding: 0 1.5rem;
-        height: 3.5rem;
-    }
-
     .nav-menu {
-    position: fixed;
-    top: clamp(60px, 8vw, 70px);
-    left: -100%;
-    width: 100vw;
-    height: calc(100vh - clamp(60px, 8vw, 70px));
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(20px);
-    flex-direction: column;
-    padding: clamp(1.5rem, 4vw, 2rem);
-    transition: left 0.3s ease-in-out;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-    align-items: center;
-    justify-content: flex-start;
-    z-index: 999;
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
     }
 
     .nav-menu.active {
@@ -477,69 +476,36 @@ body {
     }
 
     .nav-link {
-        padding: 1rem 1.5rem;
+        padding: 0.75rem;
         border-bottom: 1px solid #f3f4f6;
-        font-size: 1.125rem;
-        font-weight: 600;
-        text-align: center;
-        transition: background-color 0.2s;
-    }
-
-    .nav-link:hover {
-        background-color: #f9fafb;
-    }
-
-    .nav-link:last-child {
-        border-bottom: none;
     }
 
     .mobile-menu-btn {
         display: block;
-        padding: 0.75rem;
     }
 
-    .hamburger {
-        width: 1.75rem;
-    }
-
-    .hamburger::before,
-    .hamburger::after {
-        width: 1.75rem;
-    }
+    
 
     /* Hero Section Mobile */
     .hero {
         background-attachment: scroll;
         background-position: center center;
-        background-size: cover;
         min-height: 100vh;
-        padding: 2rem 1.5rem;
-        display: flex;
-        align-items: center;
-    }
-
-    .hero-container {
-        max-width: 100%;
-        padding: 1rem 0.5rem;
     }
     
     .hero-title {
-        font-size: 2.75rem;
+        font-size: 2.5rem;
         margin-bottom: 2rem;
-        line-height: 1.15;
-        font-weight: 800;
     }
 
     .hero-text {
-        font-size: 1rem;
-        margin-bottom: 1.25rem;
-        line-height: 1.6;
+        font-size: 1.125rem;
+        margin-bottom: 1.5rem;
     }
 
     .hero-subtext {
-        font-size: 0.938rem;
+        font-size: 1rem;
         margin-bottom: 2rem;
-        line-height: 1.5;
     }
 
     .cta-button {
@@ -557,7 +523,6 @@ body {
 
     .services-container {
         grid-template-columns: 1fr;
-        gap: 1.25rem;
     }
 
     .service-card {
@@ -588,14 +553,12 @@ body {
 
     .about-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
     .section-title {
-        font-size: 2.25rem;
         margin-left: 0;
         text-align: center;
-        margin-bottom: 2rem;
     }
 
     .about-text {
@@ -634,7 +597,6 @@ body {
 
     .footer-container {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
     }
 
     .footer-column {
